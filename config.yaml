@@ -1,0 +1,38 @@
+# Where your original videos are
+raw_dataset_dir: "./dataset"
+# Where preprocessed frame-clips will be written
+clips_root: "./clips"
+classes_file: "./clips/classes.yaml"
+
+# Preprocessing
+clip_frames: 16                
+frame_stride: 2                
+min_frames_per_video: 64       
+resize_hw: [224, 224]         
+clips_per_video_limit: 0       
+
+# Train/Val split
+val_ratio: 0.15
+seed: 42
+
+# Training
+epochs: 15
+batch_size: 8
+num_workers: 4
+lr: 3.0e-4
+weight_decay: 1.0e-4
+backbone: "resnet18"           
+freeze_backbone: false
+hidden_size: 256             
+num_lstm_layers: 1
+bidirectional: true
+dropout: 0.3
+label_smoothing: 0.1
+early_stop_patience: 5
+
+# Checkpoints & logs
+out_dir: "runs_ucf"
+
+# Location Settings
+# Set this to a specific address to override automatic geolocation for 100% accuracy
+node_location: "KEMPEGOWDA ROAD, Bannappa Park Rd, near Mysore bank circle, opp. KAVERI BHAVAN, Nagarathpete, Bengaluru, Karnataka 560002"
